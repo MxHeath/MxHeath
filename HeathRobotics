@@ -1,0 +1,46 @@
+from mblock import event
+import time
+
+@event.greenflag
+def on_greenflag():
+    sprite.x = sprite.x + 250
+    sprite.pencolor('#0041cf')
+    sprite.pendown()
+    sprite.forward(100)
+    sprite.right(90)
+    sprite.forward(100)
+    sprite.right(90)
+    sprite.forward(100)
+    sprite.right(90)
+    sprite.forward(100)
+    sprite.penup()
+    sprite.direction = 90
+    sprite.play_until_done('pop')
+    time.sleep(2)
+    sprite.y = sprite.y + 100
+    time.sleep(1)
+    sprite.left(180)
+    time.sleep(1)
+    sprite.y = sprite.y + -100
+    time.sleep(1)
+    sprite.left(180)
+    sprite.say('Hello Classmates!')
+
+
+@event.keypressed('1')
+def on_keypressed():
+    sprite.glide(200, 130, 1)
+    sprite.right(90)
+    sprite.glide(-170, 114, 1)
+    sprite.right(90)
+    sprite.glide(171, -68, 1)
+    sprite.right(90)
+    sprite.glide(5, -60, 1)
+    sprite.right(90)
+
+
+@event.keypressed('space')
+def on_keypressed1():
+    sprite.clear()
+    sprite.x = -162
+    sprite.y = -45
