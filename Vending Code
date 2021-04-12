@@ -1,0 +1,37 @@
+.DS_Store
+from mblock import event
+import time
+
+@event.keypressed('space')
+def on_keypressed():
+    # not implemented, yet
+    # not implemented, yet
+    answer = sprite.input('1 for hot dog or 2 for burger')
+    time.sleep(1)
+    if sprite.answer == 1:
+        # not supported yet
+        v = sprite.get_variable('total cost')
+        sprite.set_variable('total cost', v + 5)
+
+    else:
+        answer = sprite.input('3 for cheeseburger or 4 for hamburger')
+        time.sleep(1)
+        if sprite.answer == 3:
+            # not supported yet
+            v = sprite.get_variable('total cost')
+            sprite.set_variable('total cost', v + 8)
+
+        else:
+            # not supported yet
+            v = sprite.get_variable('total cost')
+            sprite.set_variable('total cost', v + 7.5)
+
+
+
+
+@event.keypressed('1')
+def on_keypressed1():
+    sprite.x = 21
+    sprite.y = -32
+    # not supported yet
+    sprite.set_variable('total cost', 0)
